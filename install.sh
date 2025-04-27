@@ -301,13 +301,13 @@ function install_bot() {
     fi
 
     # Default to latest release
-    ZIP_URL=$(curl -s https://api.github.com/repos/mahdiMGF2/botmirzapanel/releases/latest | grep "zipball_url" | cut -d '"' -f 4)
+    ZIP_URL=$(curl -s https://api.github.com/repos/Ilickedbbc/botmirzapanel-russian/releases/latest | grep "zipball_url" | cut -d '"' -f 4)
 
 # Check for version flag
 if [[ "$1" == "-v" && "$2" == "beta" ]] || [[ "$1" == "-beta" ]] || [[ "$1" == "-" && "$2" == "beta" ]]; then
-    ZIP_URL="https://github.com/mahdiMGF2/botmirzapanel/archive/refs/heads/main.zip"
+    ZIP_URL="https://github.com/Ilickedbbc/botmirzapanel-russian/archive/refs/heads/main.zip"
 elif [[ "$1" == "-v" && -n "$2" ]]; then
-    ZIP_URL="https://github.com/mahdiMGF2/botmirzapanel/archive/refs/tags/$2.zip"
+    ZIP_URL="https://github.com/Ilickedbbc/botmirzapanel-russian/archive/refs/tags/$2.zip"
 fi
 
     # Download and extract the repository
@@ -876,11 +876,11 @@ function install_bot_with_marzban() {
     }
 
     # Download bot files
-    ZIP_URL=$(curl -s https://api.github.com/repos/mahdiMGF2/botmirzapanel/releases/latest | grep "zipball_url" | cut -d '"' -f 4)
+    ZIP_URL=$(curl -s https://api.github.com/repos/Ilickedbbc/botmirzapanel-russian/releases/latest | grep "zipball_url" | cut -d '"' -f 4)
     if [[ "$1" == "-v" && "$2" == "beta" ]] || [[ "$1" == "-beta" ]] || [[ "$1" == "-" && "$2" == "beta" ]]; then
-        ZIP_URL="https://github.com/mahdiMGF2/botmirzapanel/archive/refs/heads/main.zip"
+        ZIP_URL="https://github.com/Ilickedbbc/botmirzapanel-russian/archive/refs/heads/main.zip"
     elif [[ "$1" == "-v" && -n "$2" ]]; then
-        ZIP_URL="https://github.com/mahdiMGF2/botmirzapanel/archive/refs/tags/$2.zip"
+        ZIP_URL="https://github.com/Ilickedbbc/botmirzapanel-russian/archive/refs/tags/$2.zip"
     fi
 
     TEMP_DIR="/tmp/mirzabot"
@@ -1169,9 +1169,9 @@ function update_bot() {
     # Fetch latest release from GitHub
     # Check for version flag
     if [[ "$1" == "-beta" ]] || [[ "$1" == "-v" && "$2" == "beta" ]]; then
-        ZIP_URL="https://github.com/mahdiMGF2/botmirzapanel/archive/refs/heads/main.zip"
+        ZIP_URL="https://github.com/Ilickedbbc/botmirzapanel-russian/archive/refs/heads/main.zip"
     else
-        ZIP_URL=$(curl -s https://api.github.com/repos/mahdiMGF2/botmirzapanel/releases/latest | grep "zipball_url" | cut -d '"' -f4)
+        ZIP_URL=$(curl -s https://api.github.com/repos/Ilickedbbc/botmirzapanel-russian/releases/latest | grep "zipball_url" | cut -d '"' -f4)
     fi
     
     # Create temporary directory
@@ -1927,7 +1927,7 @@ EOF"
     # Clone a Fresh Copy of the Bot's Source Code
     BOT_DIR="/var/www/html/$BOT_NAME"
     echo -e "\033[33mCloning bot's source code...\033[0m"
-    git clone https://github.com/mahdiMGF2/botmirzapanel.git "$BOT_DIR" || {
+    git clone https://github.com/Ilickedbbc/botmirzapanel-russian.git "$BOT_DIR" || {
         echo -e "\033[31mError: Failed to clone the repository.\033[0m"
         return 1
     }
@@ -2093,7 +2093,7 @@ function update_additional_bot() {
     fi
 
     # Clone the new version of the bot
-    if ! git clone https://github.com/mahdiMGF2/botmirzapanel.git "$BOT_PATH"; then
+    if ! git clone https://github.com/Ilickedbbc/botmirzapanel-russian.git "$BOT_PATH"; then
         echo -e "\033[31mFailed to clone the repository. Exiting...\033[0m"
         return 1
     fi
